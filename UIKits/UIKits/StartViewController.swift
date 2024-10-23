@@ -60,10 +60,16 @@ extension StartViewController: UICollectionViewDataSource, UICollectionViewDeleg
         
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let viewController = Model.allCases[indexPath.row].NextViewController
+        
+        navigationController?.pushViewController(viewController, animated: true)
+    }
 }
 
-#Preview {
-    let vc = StartViewController()
-    
-    return vc
-}
+//#Preview {
+//    let vc = StartViewController()
+//    
+//    return vc
+//}

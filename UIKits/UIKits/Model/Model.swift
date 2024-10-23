@@ -16,4 +16,11 @@ enum Model: CaseIterable {
             "ToastView"
         }
     }
+    
+    var NextViewController: UIViewController {
+        switch self {
+        case .toastView:
+            ToastViewController()
+        }
+    }
 }
